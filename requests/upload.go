@@ -1,12 +1,12 @@
 package requests
 
 import (
-  "github.com/gin-gonic/gin/json"
   "path"
   "github.com/go-resty/resty"
   "fmt"
   "strconv"
   "github.com/Infomaker/opencontent-client-go/host"
+  "encoding/json"
 )
 
 type UploadRequest struct {

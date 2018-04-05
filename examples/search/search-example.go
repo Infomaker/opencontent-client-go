@@ -3,10 +3,10 @@ package main
 import (
   "fmt"
   "os"
-  "github.com/gin-gonic/gin/json"
   "bytes"
   "github.com/Infomaker/opencontent-client-go/host"
   "github.com/Infomaker/opencontent-client-go/requests"
+  "encoding/json"
 )
 
 func main() {
