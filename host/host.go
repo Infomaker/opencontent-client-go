@@ -1,4 +1,4 @@
-package ochost
+package host
 
 import (
   "os"
@@ -30,14 +30,14 @@ func getEnvironmentVariable(name, defaultValue string) string {
 //
 func NewOpenContentHost() OpenContentHost {
 
-  ocHost := OpenContentHost{}
-  ocHost.Scheme = getEnvironmentVariable("OC_SCHEME", "http")
-  ocHost.Host = getEnvironmentVariable("OC_HOST", "localhost")
-  ocHost.User = getEnvironmentVariable("OC_USER", "admin")
-  ocHost.Password = getEnvironmentVariable("OC_PWD", "admin")
-  ocHost.Port = getEnvironmentVariable("OC_PORT", "8080")
-  ocHost.Baseurl = getEnvironmentVariable("OC_BASEURL", "/opencontent")
-  return ocHost
+  host := OpenContentHost{}
+  host.Scheme = getEnvironmentVariable("OC_SCHEME", "http")
+  host.Host = getEnvironmentVariable("OC_HOST", "localhost")
+  host.User = getEnvironmentVariable("OC_USER", "admin")
+  host.Password = getEnvironmentVariable("OC_PWD", "admin")
+  host.Port = getEnvironmentVariable("OC_PORT", "8080")
+  host.Baseurl = getEnvironmentVariable("OC_BASEURL", "/opencontent")
+  return host
 }
 
 func (host *OpenContentHost) CreateUrl() string {

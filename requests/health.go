@@ -3,17 +3,16 @@ package requests
 import (
   "fmt"
   "github.com/go-resty/resty"
-
-  "github.com/hansbringert/opencontent-client/ochost"
   "encoding/json"
   "errors"
+  "github.com/Infomaker/opencontent-client-go/host"
 )
 
 type HealthRequest struct {
-  Host ochost.OpenContentHost
+  Host host.OpenContentHost
 }
 
-func NewHealthRequest(host ochost.OpenContentHost) HealthRequest {
+func NewHealthRequest(host host.OpenContentHost) HealthRequest {
   req := HealthRequest{}
   req.Host = host
   return req

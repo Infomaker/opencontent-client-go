@@ -1,14 +1,14 @@
 package main
 
 import (
-  "github.com/hansbringert/opencontent-client/requests"
-  "github.com/hansbringert/opencontent-client/ochost"
   "fmt"
   "os"
+  "github.com/Infomaker/opencontent-client-go/host"
+  "github.com/Infomaker/opencontent-client-go/requests"
 )
 
 func main() {
-  host := ochost.NewOpenContentHost()
+  host := host.NewOpenContentHost()
 
   // upload an article
   req := requests.NewUploadRequest(host)

@@ -1,4 +1,4 @@
-package ochost
+package host
 
 import (
   "testing"

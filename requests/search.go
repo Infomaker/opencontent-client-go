@@ -1,16 +1,16 @@
 package requests
 
 import (
-  "github.com/hansbringert/opencontent-client/ochost"
   "github.com/go-resty/resty"
   "fmt"
   "strings"
   "errors"
   "encoding/json"
+  "github.com/Infomaker/opencontent-client-go/host"
 )
 
 type SearchRequest struct {
-  Host                ochost.OpenContentHost
+  Host                host.OpenContentHost
   Start               int
   Limit               int
   Property            []string
@@ -37,7 +37,7 @@ type SearchRequest struct {
   Quiet               bool // only display uuids
 }
 
-func NewSearchRequest(host ochost.OpenContentHost) SearchRequest {
+func NewSearchRequest(host host.OpenContentHost) SearchRequest {
   req := SearchRequest{}
   req.Q = "*:*"
   req.Host = host

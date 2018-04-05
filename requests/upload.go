@@ -1,16 +1,16 @@
 package requests
 
 import (
-  "github.com/hansbringert/opencontent-client/ochost"
   "github.com/gin-gonic/gin/json"
   "path"
   "github.com/go-resty/resty"
   "fmt"
   "strconv"
+  "github.com/Infomaker/opencontent-client-go/host"
 )
 
 type UploadRequest struct {
-  Host     ochost.OpenContentHost `json:"host"`
+  Host     host.OpenContentHost `json:"host"`
   Id       string                 `json:"id"`
   Batch    bool                   `json:"batch"`
   Source   string                 `json:"source"`
@@ -25,7 +25,7 @@ type FileInfo struct {
   Mimetype string `json:"mimetype"`
 }
 
-func NewUploadRequest(host ochost.OpenContentHost) UploadRequest {
+func NewUploadRequest(host host.OpenContentHost) UploadRequest {
   req := UploadRequest{}
   req.Host = host
   req.Metadata = make(map[string]FileInfo)

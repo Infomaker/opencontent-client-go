@@ -1,18 +1,18 @@
 package requests
 
 import (
-  "github.com/hansbringert/opencontent-client/ochost"
   "github.com/go-resty/resty"
   "fmt"
   "encoding/json"
   "strings"
   "strconv"
   "errors"
+  "github.com/Infomaker/opencontent-client-go/host"
 )
 
 // Struct for the proeprties request
 type PropertiesRequest struct {
-  Host       ochost.OpenContentHost
+  Host       host.OpenContentHost
   Uuid       string
   Version    int
   Name       []string // should not be used, use properties instead
@@ -22,7 +22,7 @@ type PropertiesRequest struct {
 }
 
 // Creates an empty Properties request i.e. no arguments set
-func NewPropertiesRequest(host ochost.OpenContentHost) PropertiesRequest {
+func NewPropertiesRequest(host host.OpenContentHost) PropertiesRequest {
   req := PropertiesRequest{}
   req.Host = host
   req.Version = -1

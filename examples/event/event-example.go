@@ -1,13 +1,13 @@
 package main
 
 import (
-  "github.com/hansbringert/opencontent-client/ochost"
-  "github.com/hansbringert/opencontent-client/requests"
   "fmt"
   "time"
+  "github.com/Infomaker/opencontent-client-go/requests"
+  "github.com/Infomaker/opencontent-client-go/host"
 )
 
-func details(host ochost.OpenContentHost, uuid string, propertyFields... string) {
+func details(host host.OpenContentHost, uuid string, propertyFields... string) {
   req :=requests.NewPropertiesRequest(host)
   req.Uuid = uuid
 
@@ -31,7 +31,7 @@ func details(host ochost.OpenContentHost, uuid string, propertyFields... string)
 }
 
 
-func EventTail(interval string, host ochost.OpenContentHost, eventId int) {
+func EventTail(interval string, host host.OpenContentHost, eventId int) {
   duration, _ := time.ParseDuration(interval)
   ticker := time.NewTicker(duration)
   quit := make(chan struct{})
@@ -64,7 +64,7 @@ func EventTail(interval string, host ochost.OpenContentHost, eventId int) {
 
 
 func main() {
-  host := ochost.NewOpenContentHost()
+  host := host.NewOpenContentHost()
 
   host.Host = "xlibris.oc.gota.infomaker.io"
   host.Password = "gurus2,Beaks"

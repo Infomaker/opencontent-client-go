@@ -2,12 +2,12 @@ package requests
 
 import (
   "testing"
-  "github.com/hansbringert/opencontent-client/ochost"
   "github.com/stretchr/testify/assert"
+  "github.com/Infomaker/opencontent-client-go/host"
 )
 
 func TestUploadRequest_Setters(t *testing.T) {
-  host := ochost.NewOpenContentHost()
+  host := host.NewOpenContentHost()
   req := NewUploadRequest(host)
 
   req.Id = "some-id"

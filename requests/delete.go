@@ -3,16 +3,16 @@ package requests
 import (
   "github.com/go-resty/resty"
   "fmt"
-  "github.com/hansbringert/opencontent-client/ochost"
+  "github.com/Infomaker/opencontent-client-go/host"
 )
 
 type DeleteRequest struct {
-  Host    ochost.OpenContentHost
+  Host    host.OpenContentHost
   BaseUrl string
   Uuid    string
 }
 
-func NewDeleteRequest(host ochost.OpenContentHost) DeleteRequest {
+func NewDeleteRequest(host host.OpenContentHost) DeleteRequest {
   req := DeleteRequest{}
   req.Host = host
   return req
@@ -35,13 +35,13 @@ func (req *DeleteRequest) Delete() error{
   if response.StatusCode() == 409 {
     // Retry when we have 409
     return req.Delete()
-  } else if ! ochost.IsResponseOk(*response, err, 200) {
+  } else if ! host.IsResponseOk(*response, err, 200) {
     return nil
   }
   return err
 }
 
-func DeleteUuid(host ochost.OpenContentHost, uuid string) error{
+func DeleteUuid(host host.OpenContentHost, uuid string) error{
   req := NewDeleteRequest(host)
   req.SetUuid(uuid)
   return req.Delete()

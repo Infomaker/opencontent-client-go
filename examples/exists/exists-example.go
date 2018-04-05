@@ -1,17 +1,17 @@
 package main
 
 import (
-  "github.com/hansbringert/opencontent-client/ochost"
   "fmt"
-  "github.com/hansbringert/opencontent-client/requests"
   "github.com/Sirupsen/logrus"
   "os"
   "bufio"
+  "github.com/Infomaker/opencontent-client-go/host"
+  "github.com/Infomaker/opencontent-client-go/requests"
 )
 
 func main() {
 
-  host := ochost.NewOpenContentHost()
+  host := host.NewOpenContentHost()
 
   host.Host = "xlibris.oc.gota.infomaker.io"
   host.Password = "gurus2,Beaks"
@@ -19,7 +19,7 @@ func main() {
   req := requests.NewPropertiesRequest(host)
   req.AddProperty("uuid")
 
-  file, err := os.Open("/local/infomaker/go/work/src/github.com/hansbringert/opencontent-client/examples/exists/uuids.txt")
+  file, err := os.Open("/local/infomaker/go/work/src/github.com/Infomaker/opencontent-client-go/examples/exists/uuids.txt")
   if err != nil {
     logrus.WithError(err).Warn("Problem occurred when reading file")
   } else {

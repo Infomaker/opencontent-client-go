@@ -4,16 +4,16 @@ import (
   "github.com/go-resty/resty"
   "fmt"
   "strings"
-  "github.com/hansbringert/opencontent-client/ochost"
   "encoding/json"
+  "github.com/Infomaker/opencontent-client-go/host"
 )
 
 type EventRequest struct {
-  Host  ochost.OpenContentHost
+  Host  host.OpenContentHost
   Event int
 }
 
-func NewEventRequest(host ochost.OpenContentHost) EventRequest {
+func NewEventRequest(host host.OpenContentHost) EventRequest {
   req := EventRequest{}
   req.Host = host
   req.Event = -1
@@ -73,7 +73,7 @@ type Content struct {
 func (req *EventRequest) GetEvents() (*Events, error) {
   response, err := req.execute()
   events := &Events{}
-  if ochost.IsResponseOk(*response, err, 200) {
+  if host.IsResponseOk(*response, err, 200) {
     err := json.Unmarshal(response.Body(), events)
     if err != nil {
       return events, err

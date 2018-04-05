@@ -1,14 +1,14 @@
 package main
 
 import (
-  "github.com/hansbringert/opencontent-client/ochost"
   "fmt"
   "os"
-  "github.com/hansbringert/opencontent-client/requests"
+  "github.com/Infomaker/opencontent-client-go/host"
+  "github.com/Infomaker/opencontent-client-go/requests"
 )
 
 func main() {
-  host := ochost.NewOpenContentHost()
+  host := host.NewOpenContentHost()
 
   host.Host = "192.168.1.109"
 
