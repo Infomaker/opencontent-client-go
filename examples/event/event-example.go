@@ -66,8 +66,8 @@ func EventTail(interval string, host host.OpenContentHost, eventId int) {
 func main() {
   host := host.NewOpenContentHost()
 
-  host.Host = "xlibris.oc.gota.infomaker.io"
-  host.Password = "gurus2,Beaks"
+  host.Host = "the host"
+  host.Password = ""
 
   EventTail("2s", host, -1)
   forever := make(chan bool)

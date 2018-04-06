@@ -13,8 +13,8 @@ func main() {
 
   host := host.NewOpenContentHost()
 
-  host.Host = "xlibris.oc.gota.infomaker.io"
-  host.Password = "gurus2,Beaks"
+  host.Host = "the host"
+  host.Password = ""
 
   req := requests.NewPropertiesRequest(host)
   req.AddProperty("uuid")

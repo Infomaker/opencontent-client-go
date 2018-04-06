@@ -11,7 +11,7 @@ import (
 func main() {
   host := host.NewOpenContentHost()
 
-  host.Host = "192.168.1.109"
+  host.Host = "34.241.192.167"
 
   req := requests.NewHealthRequest(host)
   health, err := req.Health()
