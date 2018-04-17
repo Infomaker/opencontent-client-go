@@ -16,6 +16,15 @@ type OpenContentHost struct {
   Baseurl  string  `json:"baseurl"`
 }
 
+type OpenContentResponse struct {
+  Err error
+  StatusCode int
+}
+
+func (e *OpenContentResponse) Error() string {
+  return e.Error()
+}
+
 func getEnvironmentVariable(name, defaultValue string) string {
   value := os.Getenv(name)
   if len(value) == 0 {
