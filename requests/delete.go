@@ -1,9 +1,9 @@
 package requests
 
 import (
-  "github.com/go-resty/resty"
   "fmt"
   "github.com/Infomaker/opencontent-client-go/host"
+  "gopkg.in/resty.v1"
 )
 
 type DeleteRequest struct {

@@ -1,9 +1,9 @@
 package requests
 
 import (
-  "github.com/go-resty/resty"
   "fmt"
   "encoding/json"
+  "gopkg.in/resty.v1"
   "strings"
   "strconv"
   "errors"

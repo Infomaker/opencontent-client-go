@@ -1,8 +1,8 @@
 package requests
 
 import (
+  "gopkg.in/resty.v1"
   "path"
-  "github.com/go-resty/resty"
   "fmt"
   "strconv"
   "github.com/Infomaker/opencontent-client-go/host"

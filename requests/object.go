@@ -3,8 +3,8 @@ package requests
 import (
   "github.com/Infomaker/opencontent-client-go/host"
   "fmt"
+  "gopkg.in/resty.v1"
   "strings"
-  "github.com/go-resty/resty"
 )
 
 type ObjectRequest struct {

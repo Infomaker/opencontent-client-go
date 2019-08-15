@@ -1,10 +1,10 @@
 package host
 
 import (
+  "gopkg.in/resty.v1"
   "os"
   "net/url"
   "fmt"
-  "github.com/go-resty/resty"
 )
 
 type OpenContentHost struct {

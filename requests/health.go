@@ -2,10 +2,10 @@ package requests
 
 import (
   "fmt"
-  "github.com/go-resty/resty"
   "encoding/json"
   "errors"
   "github.com/Infomaker/opencontent-client-go/host"
+  "gopkg.in/resty.v1"
 )
 
 type HealthRequest struct {
